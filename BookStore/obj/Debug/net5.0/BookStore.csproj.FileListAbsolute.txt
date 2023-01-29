@@ -64,3 +64,6 @@ C:\Users\ayse\Documents\GitHub\BookStore\BookStore\obj\Debug\net5.0\refint\BookS
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\obj\Debug\net5.0\BookStore.pdb
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\obj\Debug\net5.0\BookStore.genruntimeconfig.cache
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\obj\Debug\net5.0\ref\BookStore.dll
+C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\FluentValidation.dll
