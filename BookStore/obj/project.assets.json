@@ -742,11 +742,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ayse\\Desktop\\BookStore\\BookStore\\BookStore.csproj",
+      "projectUniqueName": "C:\\Users\\ayse\\Documents\\GitHub\\BookStore\\BookStore\\BookStore.csproj",
       "projectName": "BookStore",
-      "projectPath": "C:\\Users\\ayse\\Desktop\\BookStore\\BookStore\\BookStore.csproj",
+      "projectPath": "C:\\Users\\ayse\\Documents\\GitHub\\BookStore\\BookStore\\BookStore.csproj",
       "packagesPath": "C:\\Users\\ayse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ayse\\Desktop\\BookStore\\BookStore\\obj\\",
+      "outputPath": "C:\\Users\\ayse\\Documents\\GitHub\\BookStore\\BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
