@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace BookStore.BookOperations.UpdateBook
+namespace BookStore.Application.BookOperations.Commands.UpdateBook
 {
     public class UpdateBookCommand
     {

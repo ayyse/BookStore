@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BookStore.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
@@ -14,10 +15,24 @@ namespace BookStore.DbOperations
                 if (context.Books.Any())
                     return;
 
+                context.Genres.AddRange(
+                    new Genre
+                    {
+                        Name = "Science Fiction"
+                    },
+                    new Genre
+                    {
+                        Name = "Personal Growth"
+                    },
+                    new Genre
+                    {
+                        Name = "Romance"
+                    }
+                );
+
                 context.Books.AddRange(
                     new Book
                     {
-                        //Id = 1,
                         Title = "Lean Startup",
                         GenreId = 1,
                         PageCount = 200,
@@ -25,7 +40,6 @@ namespace BookStore.DbOperations
                     },
                     new Book
                     {
-                        //Id = 2,
                         Title = "Herland",
                         GenreId = 2,
                         PageCount = 250,
@@ -33,7 +47,6 @@ namespace BookStore.DbOperations
                     },
                     new Book
                     {
-                        //Id = 3,
                         Title = "Dune",
                         GenreId = 1,
                         PageCount = 350,
