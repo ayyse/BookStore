@@ -22,7 +22,7 @@ namespace BookStore.Application.BookOperations.Queries.GetBookDetail
 
         public BookDetailViewModel Handle()
         {
-            var book = _context.Books.Include(x => x.Genre).Where(x => x.Id == BookID).SingleOrDefault();
+            var book = _context.Books.Include(x => x.Genre).Include(x => x.Author).Where(x => x.Id == BookID).SingleOrDefault();
 
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı");
@@ -36,8 +36,9 @@ namespace BookStore.Application.BookOperations.Queries.GetBookDetail
     public class BookDetailViewModel
     {
         public string Title { get; set; }
-        public string Genre { get; set; }
         public int PageCount { get; set; }
         public string PublishDate { get; set; }
+        public string Genre { get; set; }
+        public string Author { get; set; }
     }
 }

@@ -15,42 +15,80 @@ namespace BookStore.DbOperations
                 if (context.Books.Any())
                     return;
 
-                context.Genres.AddRange(
-                    new Genre
-                    {
-                        Name = "Science Fiction"
-                    },
-                    new Genre
-                    {
-                        Name = "Personal Growth"
-                    },
-                    new Genre
-                    {
-                        Name = "Romance"
-                    }
-                );
-
                 context.Books.AddRange(
                     new Book
                     {
-                        Title = "Lean Startup",
-                        GenreId = 1,
-                        PageCount = 200,
-                        PublishDate = new DateTime(2001, 07, 05)
+                        Title = "Kardeşimin Hikayesi",
+                        GenreId = 3,
+                        PageCount = 334,
+                        PublishDate = new DateTime(2013, 04, 01),
+                        AuthorId = 3
                     },
                     new Book
                     {
-                        Title = "Herland",
-                        GenreId = 2,
-                        PageCount = 250,
-                        PublishDate = new DateTime(2011, 10, 05)
+                        Title = "Tutunamayanlar",
+                        GenreId = 3,
+                        PageCount = 671,
+                        PublishDate = new DateTime(1971, 01, 01),
+                        AuthorId = 2
                     },
                     new Book
                     {
-                        Title = "Dune",
+                        Title = "Son Kuşlar",
                         GenreId = 1,
                         PageCount = 350,
-                        PublishDate = new DateTime(2005, 07, 05)
+                        PublishDate = new DateTime(1952, 07, 05),
+                        AuthorId = 1
+                    }
+                );
+
+                context.Genres.AddRange(
+                    new Genre
+                    {
+                        Name = "Hikaye"
+                    },
+                    new Genre
+                    {
+                        Name = "Kişisel Gelişim"
+                    },
+                    new Genre
+                    {
+                        Name = "Roman"
+                    },
+                    new Genre
+                    {
+                        Name = "Gezi"
+                    },
+                    new Genre
+                    {
+                        Name = "Felsefe"
+                    },
+                    new Genre
+                    {
+                        Name = "Deneme"
+                    }
+                );
+
+                context.Authors.AddRange(
+                    new Author
+                    {
+                        Name = "Sait Faik Abasıyanık",
+                        BirthDate = new DateTime(1906, 11, 23)
+                    },
+                    new Author
+                    {
+                        Name = "Oğuz Atay",
+                        BirthDate = new DateTime(1934, 10, 12)
+                    },
+                    new Author
+                    {
+                        Name = "Zülfü Livaneli",
+                        BirthDate = new DateTime(1946, 06, 20)
+                    },
+                    new Author
+                    {
+                        Name = "Doğan Cüceloğlu",
+                        BirthDate = new DateTime(1946, 06, 20)
                     }
                 );
 
