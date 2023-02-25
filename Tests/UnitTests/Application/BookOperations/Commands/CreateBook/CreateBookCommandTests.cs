@@ -3,13 +3,7 @@ using BookStore.Application.BookOperations.Commands.CreateBook;
 using BookStore.DbOperations;
 using BookStore.Entities;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnitTests.TestsSetup;
-using Xunit;
 
 namespace UnitTests.Application.BookOperations.Commands.CreateBook
 {
@@ -17,27 +11,34 @@ namespace UnitTests.Application.BookOperations.Commands.CreateBook
     {
         private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
+        private CreateBookCommand _command;
 
         public CreateBookCommandTests(CommonTestFixture testFixture)
         {
             _context = testFixture.Context;
             _mapper = testFixture.Mapper;
+            _command = new CreateBookCommand(_context, _mapper);
         }
 
         [Fact]
         public void WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn()
         {
             // arrange - hazırlık
-            var book = new Book() { Title = "Test_WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn", GenreId = 3, PageCount = 334, PublishDate = new DateTime(2013, 04, 01), AuthorId = 3 };
+            var book = new Book() { 
+                Title = "Test_WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn", 
+                PageCount = 334, 
+                PublishDate = new DateTime(2013, 04, 01),
+                GenreId = 3,
+                AuthorId = 3 };
+
             _context.Books.Add(book);
             _context.SaveChanges();
 
-            CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-            command.Model = new CreateBookModel() { Title = book.Title };
+            _command.Model = new CreateBookModel() { Title = book.Title };
 
             // act - çalıştırma & assert - doğrulama
             FluentActions
-                .Invoking(() => command.Handle())
+                .Invoking(() => _command.Handle())
                 .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Kitap zaten mevcut");
         }
 
@@ -45,13 +46,18 @@ namespace UnitTests.Application.BookOperations.Commands.CreateBook
         public void WhenValidInputsAreGiven_Book_ShouldBeCreated()
         {
             // arrange 
-            CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-            CreateBookModel model = new CreateBookModel() { Title = "Test_WhenValidInputsAreGiven_Book_ShouldBeCreated", GenreId = 3, PageCount = 334, PublishDate = new DateTime(2013, 04, 01).AddYears(-1), AuthorId = 3 };
-            command.Model = model;
+            CreateBookModel model = new CreateBookModel() { 
+                Title = "Test_WhenValidInputsAreGiven_Book_ShouldBeCreated", 
+                PageCount = 334, 
+                PublishDate = new DateTime(2013, 04, 01).AddYears(-1),
+                GenreId = 3,
+                AuthorId = 3 };
+
+            _command.Model = model;
 
             // act 
             FluentActions
-                .Invoking(() => command.Handle()).Invoke();
+                .Invoking(() => _command.Handle()).Invoke();
 
             // assert
             var book = _context.Books.SingleOrDefault(x => x.Title == model.Title);

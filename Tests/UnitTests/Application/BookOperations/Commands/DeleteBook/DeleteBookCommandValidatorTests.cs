@@ -1,18 +1,10 @@
-﻿using BookStore.Application.BookOperations.Commands.CreateBook;
-using BookStore.Application.BookOperations.Commands.DeleteBook;
-using BookStore.DbOperations;
+﻿using BookStore.Application.BookOperations.Commands.DeleteBook;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitTests.Application.BookOperations.Commands.DeleteBook
 {
     public class DeleteBookCommandValidatorTests
     {
-
         private DeleteBookCommand _command;
         private DeleteBookCommandValidator _validator;
         public DeleteBookCommandValidatorTests()
@@ -25,7 +17,7 @@ namespace UnitTests.Application.BookOperations.Commands.DeleteBook
         [InlineData(0)]
         [InlineData(-100)]
         [InlineData(-3)]
-        public void WhenIdLessThenOrEqualZero_Validator_ShouldBeReturnErrors(int bookId)
+        public void WhenLessThenOrEqualZeroIdIsGiven_Validator_ShouldBeReturnErrors(int bookId)
         {
             // arrange
             _command.BookID = bookId;
@@ -40,7 +32,7 @@ namespace UnitTests.Application.BookOperations.Commands.DeleteBook
         [Theory]
         [InlineData(1)]
         [InlineData(78)]
-        public void WhenIdGreaterThenZero_Validator_ShouldNotBeReturnErrors(int bookId)
+        public void WhenGreaterThenZeroIdIsGiven_Validator_ShouldNotBeReturnErrors(int bookId)
         {
             // arrange
             _command.BookID = bookId;

@@ -2,11 +2,6 @@
 using BookStore.Application.BookOperations.Queries.GetBookDetail;
 using BookStore.DbOperations;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnitTests.TestsSetup;
 
 namespace UnitTests.Application.BookOperations.Queries.GetBookDetail
@@ -29,8 +24,10 @@ namespace UnitTests.Application.BookOperations.Queries.GetBookDetail
         [Fact]
         public void WhenThereIsNoBook_InvalidOperationException_ShouldBeReturn()
         {
+            // arrange
             _query.BookID = BookID;
 
+            // act & assert
             FluentActions
                 .Invoking(() => _query.Handle())
                 .Should().Throw<InvalidOperationException>().And.Message.Should().Be("Kitap bulunamadı");
@@ -39,6 +36,7 @@ namespace UnitTests.Application.BookOperations.Queries.GetBookDetail
         [Fact]
         public void WhenValidInputsAreGiven_Book_ShouldBeGetBookDetail()
         {
+            // arrange
             _query.BookID = 1;
 
             // act

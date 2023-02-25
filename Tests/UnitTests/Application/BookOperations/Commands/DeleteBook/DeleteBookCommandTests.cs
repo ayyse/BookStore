@@ -1,19 +1,12 @@
 ﻿using BookStore.Application.BookOperations.Commands.DeleteBook;
 using BookStore.DbOperations;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnitTests.TestsSetup;
 
 namespace UnitTests.Application.BookOperations.Commands.DeleteBook
 {
     public class DeleteBookCommandTests : IClassFixture<CommonTestFixture>
     {
-        public int BookID { get; set; }
-
         private readonly BookStoreDbContext _context;
         private DeleteBookCommand _command;
 
@@ -26,7 +19,7 @@ namespace UnitTests.Application.BookOperations.Commands.DeleteBook
         [Fact]
         public void WhenThereIsNoBook_InvalidOperationException_ShouldBeReturn()
         {
-            _command.BookID = BookID;
+            _command.BookID = 489;
 
             FluentActions
                 .Invoking(() => _command.Handle())

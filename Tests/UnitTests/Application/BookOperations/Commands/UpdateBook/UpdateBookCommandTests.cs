@@ -1,33 +1,24 @@
 ﻿using BookStore.Application.BookOperations.Commands.UpdateBook;
 using BookStore.DbOperations;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnitTests.TestsSetup;
 
 namespace UnitTests.Application.BookOperations.Commands.UpdateBook
 {
     public class UpdateBookCommandTests : IClassFixture<CommonTestFixture>
     {
-        public int BookID { get; set; }
-
         private readonly BookStoreDbContext _context;
         private UpdateBookCommand _command;
-        private UpdateBookModel _model;
         public UpdateBookCommandTests(CommonTestFixture testFixture)
         {
             _context = testFixture.Context;
             _command = new UpdateBookCommand(_context);
-            _model = new UpdateBookModel();
         }
 
         [Fact]
         public void WhenThereIsNoBook_InvalidOperationException_ShouldBeReturn()
         {
-            _command.BookID = BookID;
+            _command.BookID = 895;
 
             FluentActions
                 .Invoking(() => _command.Handle())
