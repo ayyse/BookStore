@@ -46,7 +46,7 @@ namespace UnitTests.Application.BookOperations.Commands.CreateBook
         {
             // arrange 
             CreateBookCommand command = new CreateBookCommand(_context, _mapper);
-            CreateBookModel model = new CreateBookModel() { Title = "WhenValidInputsAreGiven_Book_ShouldBeCreated", GenreId = 3, PageCount = 334, PublishDate = new DateTime(2013, 04, 01).AddYears(-1), AuthorId = 3 };
+            CreateBookModel model = new CreateBookModel() { Title = "Test_WhenValidInputsAreGiven_Book_ShouldBeCreated", GenreId = 3, PageCount = 334, PublishDate = new DateTime(2013, 04, 01).AddYears(-1), AuthorId = 3 };
             command.Model = model;
 
             // act 
@@ -60,7 +60,6 @@ namespace UnitTests.Application.BookOperations.Commands.CreateBook
             book.PublishDate.Should().Be(model.PublishDate);
             book.AuthorId.Should().Be(model.AuthorId);
             book.GenreId.Should().Be(model.GenreId);
-
         }
     }
 }

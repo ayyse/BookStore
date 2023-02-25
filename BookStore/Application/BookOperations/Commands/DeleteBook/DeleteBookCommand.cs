@@ -16,6 +16,7 @@ namespace BookStore.Application.BookOperations.Commands.DeleteBook
         public void Handle()
         {
             var book = _context.Books.SingleOrDefault(x => x.Id == BookID);
+
             if (book is null)
                 throw new InvalidOperationException("Kitap bulunamadı");
 
