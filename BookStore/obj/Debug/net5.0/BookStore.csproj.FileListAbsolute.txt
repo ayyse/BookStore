@@ -39,11 +39,15 @@ C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\BookStore.ru
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\BookStore.runtimeconfig.dev.json
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\BookStore.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\BookStore.pdb
+C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\FluentValidation.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -64,7 +68,3 @@ C:\Users\ayse\Documents\GitHub\BookStore\BookStore\obj\Debug\net5.0\refint\BookS
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\obj\Debug\net5.0\BookStore.pdb
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\obj\Debug\net5.0\BookStore.genruntimeconfig.cache
 C:\Users\ayse\Documents\GitHub\BookStore\BookStore\obj\Debug\net5.0\ref\BookStore.dll
-C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\AutoMapper.dll
-C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\FluentValidation.dll
-C:\Users\ayse\Documents\GitHub\BookStore\BookStore\bin\Debug\net5.0\Newtonsoft.Json.dll

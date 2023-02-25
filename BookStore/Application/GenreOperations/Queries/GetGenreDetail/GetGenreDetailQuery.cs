@@ -11,8 +11,8 @@ namespace BookStore.Application.GenreOperations.Queries.GetGenreDetail
         public GenreDetailViewModel Model { get; set; }
 
         private readonly IMapper _mapper;
-        private readonly BookStoreDbContext _context;
-        public GetGenreDetailQuery(BookStoreDbContext context, IMapper mapper)
+        private readonly IBookStoreDbContext _context;
+        public GetGenreDetailQuery(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

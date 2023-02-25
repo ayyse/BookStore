@@ -13,8 +13,8 @@ namespace BookStore.Application.BookOperations.Queries.GetBookDetail
         public BookDetailViewModel Model { get; set; }
 
         private readonly IMapper _mapper;
-        private readonly BookStoreDbContext _context;
-        public GetBookDetailQuery(BookStoreDbContext context, IMapper mapper)
+        private readonly IBookStoreDbContext _context;
+        public GetBookDetailQuery(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

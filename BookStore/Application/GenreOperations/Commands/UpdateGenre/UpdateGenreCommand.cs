@@ -9,8 +9,8 @@ namespace BookStore.Application.GenreOperations.Commands.UpdateGenre
         public UpdateGenreModel Model { get; set; }
         public int GenreID { get; set; }
 
-        private readonly BookStoreDbContext _context;
-        public UpdateGenreCommand(BookStoreDbContext context)
+        private readonly IBookStoreDbContext _context;
+        public UpdateGenreCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

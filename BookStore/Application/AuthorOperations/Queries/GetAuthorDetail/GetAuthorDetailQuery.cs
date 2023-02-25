@@ -12,8 +12,8 @@ namespace BookStore.Application.AuthorOperations.Queries.GetAuthorDetail
         public AuthorDetailViewModel Model { get; set; }
 
         private readonly IMapper _mapper;
-        private readonly BookStoreDbContext _context;
-        public GetAuthorDetailQuery(BookStoreDbContext context, IMapper mapper)
+        private readonly IBookStoreDbContext _context;
+        public GetAuthorDetailQuery(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

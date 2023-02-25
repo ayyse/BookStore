@@ -11,8 +11,8 @@ namespace BookStore.Application.BookOperations.Commands.CreateBook
         public CreateBookModel Model { get; set; }
 
         private readonly IMapper _mapper;
-        private readonly BookStoreDbContext _context;
-        public CreateBookCommand(BookStoreDbContext context, IMapper mapper)
+        private readonly IBookStoreDbContext _context;
+        public CreateBookCommand(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -35,8 +35,9 @@ namespace BookStore.Application.BookOperations.Commands.CreateBook
     public class CreateBookModel
     {
         public string Title { get; set; }
-        public int GenreId { get; set; }
         public int PageCount { get; set; }
         public DateTime PublishDate { get; set; }
+        public int GenreId { get; set; }
+        public int AuthorId { get; set; }
     }
 }

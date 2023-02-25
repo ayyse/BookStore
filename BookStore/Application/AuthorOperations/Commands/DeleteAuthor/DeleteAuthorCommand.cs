@@ -8,8 +8,8 @@ namespace BookStore.Application.AuthorOperations.Commands.DeleteAuthor
     {
         public int AuthorID { get; set; }
 
-        private readonly BookStoreDbContext _context;
-        public DeleteAuthorCommand(BookStoreDbContext context)
+        private readonly IBookStoreDbContext _context;
+        public DeleteAuthorCommand(IBookStoreDbContext context)
         {
             _context = context;
         }
@@ -20,7 +20,9 @@ namespace BookStore.Application.AuthorOperations.Commands.DeleteAuthor
             if (author is null)
                 throw new InvalidOperationException("Yazar bulunamadı");
 
-            if (author.Book is not null)
+            var authorsbook = _context.Books.SingleOrDefault(x => x.AuthorId == AuthorID);
+
+            if (authorsbook is not null)
                 throw new InvalidOperationException("Bu yazara ait bir kitap bulunduğu için yazarı silemezsiniz");
 
             _context.Authors.Remove(author);
