@@ -8,8 +8,6 @@ namespace UnitTests.Application.BookOperations.Queries.GetBookDetail
 {
     public class GetBookDetailQueryTests : IClassFixture<CommonTestFixture>
     {
-        public int BookID { get; set; }
-
         private readonly IMapper _mapper;
         private readonly BookStoreDbContext _context;
         private GetBookDetailQuery _query;
@@ -25,7 +23,7 @@ namespace UnitTests.Application.BookOperations.Queries.GetBookDetail
         public void WhenThereIsNoBook_InvalidOperationException_ShouldBeReturn()
         {
             // arrange
-            _query.BookID = BookID;
+            _query.BookID = 985;
 
             // act & assert
             FluentActions
@@ -37,7 +35,7 @@ namespace UnitTests.Application.BookOperations.Queries.GetBookDetail
         public void WhenValidInputsAreGiven_Book_ShouldBeGetBookDetail()
         {
             // arrange
-            _query.BookID = 1;
+            _query.BookID = 2;
 
             // act
             FluentActions.Invoking(() => _query.Handle()).Invoke();

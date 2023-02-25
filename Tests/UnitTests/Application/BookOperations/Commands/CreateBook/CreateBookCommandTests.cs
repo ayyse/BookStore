@@ -24,12 +24,14 @@ namespace UnitTests.Application.BookOperations.Commands.CreateBook
         public void WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn()
         {
             // arrange - hazırlık
-            var book = new Book() { 
+            var book = new Book() 
+            { 
                 Title = "Test_WhenAlreadyExistBookTitleIsGiven_InvalidOperationException_ShouldBeReturn", 
                 PageCount = 334, 
                 PublishDate = new DateTime(2013, 04, 01),
                 GenreId = 3,
-                AuthorId = 3 };
+                AuthorId = 3 
+            };
 
             _context.Books.Add(book);
             _context.SaveChanges();
@@ -46,12 +48,14 @@ namespace UnitTests.Application.BookOperations.Commands.CreateBook
         public void WhenValidInputsAreGiven_Book_ShouldBeCreated()
         {
             // arrange 
-            CreateBookModel model = new CreateBookModel() { 
+            CreateBookModel model = new CreateBookModel() 
+            { 
                 Title = "Test_WhenValidInputsAreGiven_Book_ShouldBeCreated", 
                 PageCount = 334, 
                 PublishDate = new DateTime(2013, 04, 01).AddYears(-1),
                 GenreId = 3,
-                AuthorId = 3 };
+                AuthorId = 3 
+            };
 
             _command.Model = model;
 

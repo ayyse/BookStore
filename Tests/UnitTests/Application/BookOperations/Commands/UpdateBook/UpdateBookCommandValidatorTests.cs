@@ -1,10 +1,5 @@
 ﻿using BookStore.Application.BookOperations.Commands.UpdateBook;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitTests.Application.BookOperations.Commands.UpdateBook
 {

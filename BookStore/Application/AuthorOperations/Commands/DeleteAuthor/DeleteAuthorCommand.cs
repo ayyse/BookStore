@@ -20,10 +20,10 @@ namespace BookStore.Application.AuthorOperations.Commands.DeleteAuthor
             if (author is null)
                 throw new InvalidOperationException("Yazar bulunamadı");
 
-            var authorsbook = _context.Books.SingleOrDefault(x => x.AuthorId == AuthorID);
+            //var authorsbook = _context.Books.SingleOrDefault(x => x.AuthorId == AuthorID);
 
-            if (authorsbook is not null)
-                throw new InvalidOperationException("Bu yazara ait bir kitap bulunduğu için yazarı silemezsiniz");
+            //if (authorsbook is not null)
+            //    throw new InvalidOperationException("Bu yazara ait bir kitap bulunduğu için yazarı silemezsiniz");
 
             _context.Authors.Remove(author);
             _context.SaveChanges();
