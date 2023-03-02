@@ -35,7 +35,7 @@ namespace UnitTests.Application.BookOperations.Queries.GetBookDetail
         public void WhenValidInputsAreGiven_Book_ShouldBeGetBookDetail()
         {
             // arrange
-            _query.BookID = 2;
+            _query.BookID = 3;
 
             // act
             FluentActions.Invoking(() => _query.Handle()).Invoke();
